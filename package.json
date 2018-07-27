@@ -1,6 +1,6 @@
 {
   "name": "errlop",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An extended Error class that envelops a parent error, such that the stack trace contains the causation",
   "homepage": "https://github.com/bevry/errlop",
   "license": "MIT",
@@ -26,9 +26,7 @@
       "flattr",
       "paypal",
       "bitcoin",
-      "wishlist",
-      "---",
-      "slackin"
+      "wishlist"
     ],
     "config": {
       "patreonUsername": "bevry",
@@ -36,8 +34,7 @@
       "flattrUsername": "balupton",
       "paypalURL": "https://bevry.me/paypal",
       "bitcoinURL": "https://bevry.me/bitcoin",
-      "wishlistURL": "https://bevry.me/wishlist",
-      "slackinURL": "https://slack.bevry.me"
+      "wishlistURL": "https://bevry.me/wishlist"
     }
   },
   "author": "2018+ Benjamin Lupton <b@lupton.cc>",
@@ -49,7 +46,7 @@
     "url": "https://github.com/bevry/errlop.git"
   },
   "engines": {
-    "node": ">=0.12"
+    "node": ">=0.8"
   },
   "editions": [
     {

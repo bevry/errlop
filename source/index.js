@@ -1,6 +1,6 @@
 'use strict'
 
-const util = require('util')
+const isValidArray = ['undefined']
 
 /**
  * Only accept codes that are numbers, otherwise discard them
@@ -12,6 +12,19 @@ function parseCode (code) {
 	const number = Number(code)
 	if (isNaN(number)) return null
 	return number
+}
+
+/**
+ * Prevent [a weird error on node version 4](https://travis-ci.org/bevry/editions/jobs/408828147) which has the following properties
+ * @example
+ * console.log(JSON.stringify(typeof value), Boolean(value), typeof value === 'undefined', value == undefined, typeof value, typeof (typeof value), `[${typeof value}]`, ['undefined'].indexOf(typeof value))
+ * // "undefined" true false false undefined string [undefined] 0
+ * @param {*} value
+ * @returns {boolean}
+ * @private
+ */
+function isValid (value) {
+	return Boolean(value) && isValidArray.indexOf(typeof value) === -1
 }
 
 /**
@@ -45,9 +58,18 @@ class Errlop extends Error {
 		 */
 		this.ancestors = []
 		let ancestor = this.parent
-		while (ancestor) {
+		while (isValid(ancestor)) {
 			this.ancestors.push(ancestor)
 			ancestor = ancestor.parent
+		}
+
+		// this code must support node 0.8, as well as prevent a weird bug in node v4: https://travis-ci.org/bevry/editions/jobs/408828147
+		let exitCode = null
+		for (let index = 0, errors = [input, this, ...this.ancestors]; index < errors.length && exitCode == null; ++index) {
+			const error = errors[index]
+			if (isValid(error)) {
+				exitCode = parseCode(error.exitCode) || parseCode(error.errno) || parseCode(error.code)
+			}
 		}
 
 		/**
@@ -56,7 +78,7 @@ class Errlop extends Error {
 		 * @type {Number?}
 		 * @public
 		 */
-		this.exitCode = [input, this, ...this.ancestors].map((error) => parseCode(error.exitCode) || parseCode(error.errno) || parseCode(error.code)).find((exitCode) => exitCode != null)
+		this.exitCode = exitCode
 
 		/**
 		 * The stack for our instance alone, without any parents.
