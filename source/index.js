@@ -1,7 +1,5 @@
 'use strict'
 
-const isValidArray = ['undefined']
-
 /**
  * Only accept codes that are numbers, otherwise discard them
  * @param {*} code
@@ -17,14 +15,14 @@ function parseCode (code) {
 /**
  * Prevent [a weird error on node version 4](https://travis-ci.org/bevry/editions/jobs/408828147) which has the following properties
  * @example
- * console.log(JSON.stringify(typeof value), Boolean(value), typeof value === 'undefined', value == undefined, typeof value, typeof (typeof value), `[${typeof value}]`, ['undefined'].indexOf(typeof value))
- * // "undefined" true false false undefined string [undefined] 0
+ * console.log(JSON.stringify(typeof value), Boolean(value), typeof value === 'undefined', value == undefined, typeof value, typeof (typeof value), `[${typeof value}]`, ['undefined'].indexOf(typeof value), typeof (typeof value))
+ * // "undefined" true false false undefined string [undefined] 0 string
  * @param {*} value
  * @returns {boolean}
  * @private
  */
 function isValid (value) {
-	return Boolean(value) && isValidArray.indexOf(typeof value) === -1
+	return Boolean(value) && String(typeof value) !== 'undefined'
 }
 
 /**

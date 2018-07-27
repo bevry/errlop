@@ -1,6 +1,6 @@
 {
   "name": "errlop",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An extended Error class that envelops a parent error, such that the stack trace contains the causation",
   "homepage": "https://github.com/bevry/errlop",
   "license": "MIT",

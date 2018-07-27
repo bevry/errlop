@@ -1,5 +1,8 @@
 # History
 
+## v1.0.2 2018 July 27
+- More effecient node version 4 crash prevention
+
 ## v1.0.1 2018 July 27
 - Support node version 0.8
 - Prevent a crash on node version 4 under special conditions
