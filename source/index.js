@@ -13,16 +13,26 @@ function parseCode (code) {
 }
 
 /**
- * Prevent [a weird error on node version 4](https://travis-ci.org/bevry/editions/jobs/408828147) which has the following properties
- * @example
- * console.log(JSON.stringify(typeof value), Boolean(value), typeof value === 'undefined', value == undefined, typeof value, typeof (typeof value), `[${typeof value}]`, ['undefined'].indexOf(typeof value), typeof (typeof value))
- * // "undefined" true false false undefined string [undefined] 0 string
+ * Fetch the code from the value
+ * @param {Object|Error} value
+ * @returns {boolean}
+ * @private
+ */
+function fetchCode (value) {
+	return value && (
+		parseCode(value.exitCode) || parseCode(value.errno) || parseCode(value.code)
+	)
+}
+
+/**
+ * Prevent [a weird error on node version 4](https://github.com/bevry/errlop/issues/1) and below.
  * @param {*} value
  * @returns {boolean}
  * @private
  */
 function isValid (value) {
-	return Boolean(value) && String(typeof value) !== 'undefined'
+	/* eslint no-use-before-define:0 */
+	return value instanceof Error || Errlop.isErrlop(value)
 }
 
 /**
@@ -42,6 +52,13 @@ class Errlop extends Error {
 		super(input.message || input)
 
 		/**
+		 * Duck typing as node 4 and intanceof does not work for error extensions
+		 * @type {Errlop}
+		 * @public
+		 */
+		this.klass = Errlop
+
+		/**
 		 * The parent error if it was provided.
 		 * If a parent was provided, then use that, otherwise use the input's parent, if it exists.
 		 * @type {Error?}
@@ -56,18 +73,17 @@ class Errlop extends Error {
 		 */
 		this.ancestors = []
 		let ancestor = this.parent
-		while (isValid(ancestor)) {
+		while (ancestor) {
 			this.ancestors.push(ancestor)
 			ancestor = ancestor.parent
 		}
 
 		// this code must support node 0.8, as well as prevent a weird bug in node v4: https://travis-ci.org/bevry/editions/jobs/408828147
-		let exitCode = null
-		for (let index = 0, errors = [input, this, ...this.ancestors]; index < errors.length && exitCode == null; ++index) {
-			const error = errors[index]
-			if (isValid(error)) {
-				exitCode = parseCode(error.exitCode) || parseCode(error.errno) || parseCode(error.code)
-			}
+		let exitCode = fetchCode(input)
+		if (exitCode == null) exitCode = fetchCode(this)
+		for (let index = 0; index < this.ancestors.length && exitCode == null; ++index) {
+			const error = this.ancestors[index]
+			if (isValid(error)) exitCode = fetchCode(error)
 		}
 
 		/**
@@ -108,14 +124,25 @@ class Errlop extends Error {
 	}
 
 	/**
-	 * Ensure that the input value is an Errlop instance
+	 * Check whether or not the value is an Errlop instance
+	 * @param {*} value
+	 * @returns {boolean}
+	 * @static
+	 * @public
+	 */
+	static isErrlop (value) {
+		return value && (value instanceof this || value.klass === this)
+	}
+
+	/**
+	 * Ensure that the value is an Errlop instance
 	 * @param {*} value
 	 * @returns {Errlop}
 	 * @static
 	 * @public
 	 */
 	static ensure (value) {
-		return (value instanceof this) ? value : this.create(value)
+		return this.isErrlop(value) ? value : this.create(value)
 	}
 }
 
