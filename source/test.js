@@ -1,11 +1,11 @@
 'use strict'
 
-const joe = require('joe')
+const kava = require('kava')
 const Errlop = require('./')
 const { equal } = require('assert-helpers')
 
-joe.suite('errlop', function (suite, test) {
-	test('stacks work as expected', function () {
+kava.suite('errlop', function(suite, test) {
+	test('stacks work as expected', function() {
 		const a = new Errlop('AError')
 		const b = new Errlop('BError', a)
 		const c = Errlop.create('CError', b)
@@ -14,11 +14,23 @@ joe.suite('errlop', function (suite, test) {
 		equal(stack.indexOf('BError') !== -1, true, 'BError exists in CError.stack')
 		equal(stack.indexOf('AError') !== -1, true, 'AError exists in CError.stack')
 		const orphanStack = c.orphanStack
-		equal(orphanStack.indexOf('CError') !== -1, true, 'CError exists in CError.orphanStack')
-		equal(orphanStack.indexOf('BError') !== -1, false, 'BError does not exist in CError.orphanStack')
-		equal(orphanStack.indexOf('AError') !== -1, false, 'AError does not exist in CError.orphanStack')
+		equal(
+			orphanStack.indexOf('CError') !== -1,
+			true,
+			'CError exists in CError.orphanStack'
+		)
+		equal(
+			orphanStack.indexOf('BError') !== -1,
+			false,
+			'BError does not exist in CError.orphanStack'
+		)
+		equal(
+			orphanStack.indexOf('AError') !== -1,
+			false,
+			'AError does not exist in CError.orphanStack'
+		)
 	})
-	test('exitCode works as expected', function () {
+	test('exitCode works as expected', function() {
 		// manual set
 		const a = new Errlop('AError')
 		a.exitCode = 1
@@ -34,7 +46,11 @@ joe.suite('errlop', function (suite, test) {
 
 		// inherit from grandparent
 		const c = new Errlop('CError', b)
-		equal(c.exitCode, 1, 'c.exitCode inherited from b.exitCode which inherited from a.exitCode correctly')
+		equal(
+			c.exitCode,
+			1,
+			'c.exitCode inherited from b.exitCode which inherited from a.exitCode correctly'
+		)
 
 		// inherit yet again, but this time override
 		const d = new Errlop({ message: 'DError', exitCode: 4 }, c)
@@ -45,7 +61,7 @@ joe.suite('errlop', function (suite, test) {
 		equal(b.exitCode, 1, 'b.exitCode remained the initial inherited value')
 		equal(c.exitCode, 1, 'c.exitCode remained the initial inherited value')
 	})
-	test('exitCode can inherit from errno', function () {
+	test('exitCode can inherit from errno', function() {
 		// manual set
 		const a = new Error('AError')
 		a.errno = 1
@@ -54,7 +70,7 @@ joe.suite('errlop', function (suite, test) {
 		const b = new Errlop('BError', a)
 		equal(b.exitCode, 1, 'b.exitCode inherited a.exitCode correctly')
 	})
-	test('exitCode can inherit from code', function () {
+	test('exitCode can inherit from code', function() {
 		// manual set
 		const a = new Error('AError')
 		a.code = 1
@@ -63,7 +79,7 @@ joe.suite('errlop', function (suite, test) {
 		const b = new Errlop('BError', a)
 		equal(b.exitCode, 1, 'b.exitCode inherited a.exitCode correctly')
 	})
-	test('exitCode correctly dismisses non numeric values', function () {
+	test('exitCode correctly dismisses non numeric values', function() {
 		// manual set
 		const a = new Error('AError')
 		a.code = new Error('annoying thing that somtimes happens')

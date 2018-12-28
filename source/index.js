@@ -6,7 +6,7 @@
  * @returns {number}
  * @private
  */
-function parseCode (code) {
+function parseCode(code) {
 	const number = Number(code)
 	if (isNaN(number)) return null
 	return number
@@ -18,9 +18,12 @@ function parseCode (code) {
  * @returns {boolean}
  * @private
  */
-function fetchCode (value) {
-	return value && (
-		parseCode(value.exitCode) || parseCode(value.errno) || parseCode(value.code)
+function fetchCode(value) {
+	return (
+		value &&
+		(parseCode(value.exitCode) ||
+			parseCode(value.errno) ||
+			parseCode(value.code))
 	)
 }
 
@@ -30,7 +33,7 @@ function fetchCode (value) {
  * @returns {boolean}
  * @private
  */
-function isValid (value) {
+function isValid(value) {
 	/* eslint no-use-before-define:0 */
 	return value instanceof Error || Errlop.isErrlop(value)
 }
@@ -45,7 +48,7 @@ function isValid (value) {
  * @public
  */
 class Errlop extends Error {
-	constructor (input, parent) {
+	constructor(input, parent) {
 		if (!input) throw new Error('Attempted to create an Errlop without a input')
 
 		// Instantiate with the above
@@ -81,7 +84,11 @@ class Errlop extends Error {
 		// this code must support node 0.8, as well as prevent a weird bug in node v4: https://travis-ci.org/bevry/editions/jobs/408828147
 		let exitCode = fetchCode(input)
 		if (exitCode == null) exitCode = fetchCode(this)
-		for (let index = 0; index < this.ancestors.length && exitCode == null; ++index) {
+		for (
+			let index = 0;
+			index < this.ancestors.length && exitCode == null;
+			++index
+		) {
 			const error = this.ancestors[index]
 			if (isValid(error)) exitCode = fetchCode(error)
 		}
@@ -108,7 +115,10 @@ class Errlop extends Error {
 		 * @type {string}
 		 * @public
 		 */
-		this.stack = [this.orphanStack, ...this.ancestors].reduce((accumulator, error) => `${accumulator}\n↳ ${error.orphanStack || error.stack || error}`)
+		this.stack = [this.orphanStack, ...this.ancestors].reduce(
+			(accumulator, error) =>
+				`${accumulator}\n↳ ${error.orphanStack || error.stack || error}`
+		)
 	}
 
 	/**
@@ -119,7 +129,7 @@ class Errlop extends Error {
 	 * @static
 	 * @public
 	 */
-	static create (...args) {
+	static create(...args) {
 		return new this(...args)
 	}
 
@@ -130,7 +140,7 @@ class Errlop extends Error {
 	 * @static
 	 * @public
 	 */
-	static isErrlop (value) {
+	static isErrlop(value) {
 		return value && (value instanceof this || value.klass === this)
 	}
 
@@ -141,7 +151,7 @@ class Errlop extends Error {
 	 * @static
 	 * @public
 	 */
-	static ensure (value) {
+	static ensure(value) {
 		return this.isErrlop(value) ? value : this.create(value)
 	}
 }
