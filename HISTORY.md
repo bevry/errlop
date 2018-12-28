@@ -1,5 +1,9 @@
 # History
 
+## v1.1.0 2018 December 28
+
+-   Updated [base files](https://github.com/bevry/base) and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v1.0.3 2018 August 19
 
 -   Add duck typing for node version 4 and under
