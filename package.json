@@ -1,6 +1,6 @@
 {
   "name": "errlop",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "An extended Error class that envelops a parent error, such that the stack trace contains the causation",
   "homepage": "https://github.com/bevry/errlop",
   "license": "MIT",
@@ -105,7 +105,7 @@
   "main": "index.js",
   "browser": "edition-browsers/index.js",
   "dependencies": {
-    "editions": "^2.1.0"
+    "editions": "^2.1.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

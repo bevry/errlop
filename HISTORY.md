@@ -1,5 +1,9 @@
 # History
 
+## v1.1.1 2018 December 28
+
+-   Updated `editions` dependency, should function to fix [issue #2](https://github.com/bevry/errlop/issues/2)
+
 ## v1.1.0 2018 December 28
 
 -   Updated [base files](https://github.com/bevry/base) and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
