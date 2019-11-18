@@ -1,6 +1,6 @@
 {
   "name": "errlop",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "An extended Error class that envelops a parent error, such that the stack trace contains the causation",
   "homepage": "https://github.com/bevry/errlop",
   "license": "MIT",
@@ -48,7 +48,8 @@
     "Benjamin Lupton (http://balupton.com)"
   ],
   "contributors": [
-    "Benjamin Lupton (http://balupton.com)"
+    "Benjamin Lupton (http://balupton.com)",
+    "dependabot-preview[bot] (http://github.com/apps/dependabot-preview)"
   ],
   "bugs": {
     "url": "https://github.com/bevry/errlop/issues"
@@ -71,7 +72,7 @@
         "require"
       ],
       "engines": {
-        "node": "6 || 8 || 10 || 12 || 13",
+        "node": "6 || 8 || 10 || 12",
         "browsers": false
       }
     },
@@ -97,11 +98,15 @@
         "require"
       ],
       "engines": {
-        "node": "0.8 || 0.10 || 0.12 || 4 || 6 || 8 || 10 || 12 || 13",
+        "node": "0.8 || 0.10 || 0.12 || 4 || 6 || 8 || 10 || 12",
         "browsers": false
       }
     }
   ],
+  "boundation": {
+    "minimumSupportNodeVersion": "0.8",
+    "minimumTestNodeVersion": "0.8"
+  },
   "main": "index.js",
   "browser": "edition-browsers/index.js",
   "dependencies": {
@@ -114,16 +119,16 @@
     "@babel/preset-env": "^7.7.1",
     "assert-helpers": "4.10.0",
     "eslint": "^6.6.0",
-    "eslint-config-bevry": "^1.2.1",
-    "eslint-config-prettier": "^6.5.0",
+    "eslint-config-bevry": "^1.3.0",
+    "eslint-config-prettier": "^6.6.0",
     "eslint-plugin-prettier": "^3.1.1",
     "jsdoc": "^3.6.3",
-    "kava": "^3.2.0",
+    "kava": "3.2.0",
     "minami": "^1.2.3",
     "prettier": "^1.19.1",
-    "projectz": "^1.10.0",
+    "projectz": "^1.11.0",
     "surge": "^0.21.3",
-    "valid-directory": "^1.0.0"
+    "valid-directory": "^1.1.1"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
