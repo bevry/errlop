@@ -1,6 +1,6 @@
 {
   "name": "errlop",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "An extended Error class that envelops a parent error, such that the stack trace contains the causation",
   "homepage": "https://github.com/bevry/errlop",
   "license": "MIT",
@@ -21,6 +21,7 @@
       "daviddm",
       "daviddmdev",
       "---",
+      "githubsponsors",
       "patreon",
       "flattr",
       "liberapay",
@@ -31,6 +32,7 @@
       "wishlist"
     ],
     "config": {
+      "githubSponsorsUsername": "balupton",
       "buymeacoffeeUsername": "balupton",
       "cryptoURL": "https://bevry.me/crypto",
       "flattrUsername": "balupton",
@@ -103,32 +105,29 @@
       }
     }
   ],
-  "boundation": {
-    "minimumSupportNodeVersion": "0.8",
-    "minimumTestNodeVersion": "0.8"
-  },
+  "type": "commonjs",
   "main": "index.js",
   "browser": "edition-browsers/index.js",
   "dependencies": {
     "editions": "^2.2.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.4",
-    "@babel/core": "^7.7.4",
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
     "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
-    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-env": "^7.7.6",
     "assert-helpers": "4.10.0",
     "eslint": "^6.7.2",
-    "eslint-config-bevry": "^2.1.0",
+    "eslint-config-bevry": "^2.2.0",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
     "jsdoc": "^3.6.3",
     "kava": "3.2.0",
     "minami": "^1.2.3",
     "prettier": "^1.19.1",
-    "projectz": "^1.13.0",
+    "projectz": "^1.15.0",
     "surge": "^0.21.3",
-    "valid-directory": "^1.4.0"
+    "valid-directory": "^1.5.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
@@ -173,7 +172,7 @@
             "@babel/preset-env",
             {
               "targets": "defaults",
-              "modules": "commonjs"
+              "modules": false
             }
           ]
         ],
@@ -190,7 +189,7 @@
               "targets": {
                 "node": "0.8"
               },
-              "modules": "commonjs"
+              "modules": false
             }
           ]
         ],
@@ -199,5 +198,9 @@
         ]
       }
     }
+  },
+  "boundation": {
+    "minimumSupportNodeVersion": "0.8",
+    "minimumTestNodeVersion": "0.8"
   }
 }
