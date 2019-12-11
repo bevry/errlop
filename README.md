@@ -55,22 +55,10 @@ An extended Error class that envelops a parent error, such that the stack trace 
 
 <p>This package is published with the following editions:</p>
 
-<ul><li><code>errlop</code> aliases <code>errlop/index.js</code> which uses <a href="https://editions.bevry.me" title="Editions are the best way to produce and consume packages you care about.">Editions</a> to automatically select the correct edition for the consumers environment</li>
-<li><code>errlop/source/index.js</code> is esnext source code with require for modules</li>
-<li><code>errlop/edition-browsers/index.js</code> is esnext compiled for browsers with require for modules</li>
-<li><code>errlop/edition-node-0.8/index.js</code> is esnext compiled for node.js 0.8 with require for modules</li></ul>
-
-<h3><a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a></h3>
-
-This project provides its type information via inline <a href="http://usejsdoc.org" title="JSDoc is an API documentation generator for JavaScript, similar to Javadoc or phpDocumentor">JSDoc Comments</a>. To make use of this in <a href="https://www.typescriptlang.org/" title="TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. ">TypeScript</a>, set your <code>maxNodeModuleJsDepth</code> compiler option to `5` or thereabouts. You can accomlish this via your `tsconfig.json` file like so:
-
-``` json
-{
-  "compilerOptions": {
-    "maxNodeModuleJsDepth": 5
-  }
-}
-```
+<ul><li><code>errlop/source/index.ts</code> is typescript source code with import for modules</li>
+<li><code>errlop/edition-browsers/index.js</code> is typescript compiled against <a href="https://babeljs.io/docs/learn-es2015/" title="ECMAScript Next">ESNext</a> for web browsers with import for modules</li>
+<li><code>errlop</code> aliases <code>errlop/edition-es5/index.js</code></li>
+<li><code>errlop/edition-es5/index.js</code> is typescript compiled against ES5 for Node.js with require for modules</li></ul>
 
 <!-- /INSTALL -->
 

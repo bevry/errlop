@@ -1,5 +1,12 @@
 # History
 
+## v2.0.0 2019 December 11
+
+-   Errlop is now written in TypeScript
+-   Errlop's browser edition now makes use of ECMAScript modules
+-   Errlop now only includes one Node.js edition that runs on all Node.js environments
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v1.7.0 2019 December 9
 
 -   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
