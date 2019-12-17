@@ -68,6 +68,7 @@ An extended Error class that envelops a parent error, such that the stack trace 
 [Complete API Documentation.](http://master.errlop.bevry.surge.sh/docs/)
 
 ``` javascript
+// const Errlop = require('errlop').default
 import Errlop from 'errlop'
 const a = new Errlop('AError')
 const b = new Errlop('BError', a)
