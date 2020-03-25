@@ -1,17 +1,23 @@
 {
   "name": "errlop",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "An extended Error class that envelops a parent error, such that the stack trace contains the causation",
   "homepage": "https://github.com/bevry/errlop",
   "license": "MIT",
   "keywords": [
+    "browser",
     "error",
+    "export-default",
+    "module",
+    "nerror",
     "nested",
     "nested-error",
-    "nerror",
-    "verror",
+    "ono",
     "simple",
-    "ono"
+    "typed",
+    "types",
+    "typescript",
+    "verror"
   ],
   "badges": {
     "list": [
@@ -50,8 +56,7 @@
     "Benjamin Lupton (http://balupton.com)"
   ],
   "contributors": [
-    "Benjamin Lupton (http://balupton.com)",
-    "dependabot-preview[bot] (http://github.com/apps/dependabot-preview)"
+    "Benjamin Lupton (http://balupton.com)"
   ],
   "bugs": {
     "url": "https://github.com/bevry/errlop/issues"
@@ -65,7 +70,7 @@
   },
   "editions": [
     {
-      "description": "typescript source code with import for modules",
+      "description": "TypeScript source code with Import for modules",
       "directory": "source",
       "entry": "index.ts",
       "tags": [
@@ -75,7 +80,7 @@
       "engines": false
     },
     {
-      "description": "typescript compiled against ESNext for web browsers with import for modules",
+      "description": "TypeScript compiled against ESNext for web browsers with Import for modules",
       "directory": "edition-browsers",
       "entry": "index.js",
       "tags": [
@@ -88,7 +93,7 @@
       }
     },
     {
-      "description": "typescript compiled against ES5 for Node.js with require for modules",
+      "description": "TypeScript compiled against ES5 for Node.js with Require for modules",
       "directory": "edition-es5",
       "entry": "index.js",
       "tags": [
@@ -97,7 +102,7 @@
         "require"
       ],
       "engines": {
-        "node": "0.8 || 0.10 || 0.12 || 4 || 6 || 8 || 10 || 12 || 13",
+        "node": "0.8 || 0.10 || 0.12 || 4 || 6 || 8 || 10 || 12",
         "browsers": false
       }
     }
@@ -108,20 +113,21 @@
   "browser": "edition-browsers/index.js",
   "module": "edition-browsers/index.js",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.11.0",
-    "@typescript-eslint/parser": "^2.11.0",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
     "assert-helpers": "4.10.0",
-    "eslint": "^6.7.2",
+    "eslint": "^6.8.0",
     "eslint-config-bevry": "^2.3.0",
-    "eslint-config-prettier": "^6.7.0",
-    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
     "kava": "3.2.0",
-    "prettier": "^1.19.1",
-    "projectz": "^1.16.0",
+    "prettier": "^2.0.2",
+    "projectz": "^1.19.0",
     "surge": "^0.21.3",
-    "typedoc": "^0.15.4",
-    "typescript": "^3.7.3",
-    "valid-directory": "^1.6.0"
+    "typedoc": "^0.17.3",
+    "typescript": "^3.8.3",
+    "valid-directory": "^1.6.0",
+    "valid-module": "^1.0.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
@@ -142,10 +148,11 @@
     "our:setup": "npm run our:setup:install",
     "our:setup:install": "npm install",
     "our:test": "npm run our:verify && npm test",
-    "our:verify": "npm run our:verify:directory && npm run our:verify:eslint && npm run our:verify:prettier && npm run our:verify:typescript",
-    "our:verify:directory": "npx valid-directory",
+    "our:verify": "npm run our:verify:directory && npm run our:verify:eslint && npm run our:verify:module && npm run our:verify:prettier && npm run our:verify:typescript",
+    "our:verify:directory": "valid-directory",
     "our:verify:eslint": "eslint --fix --ignore-pattern '**/*.d.ts' --ignore-pattern '**/vendor/' --ignore-pattern '**/node_modules/' --ext .mjs,.js,.jsx,.ts,.tsx ./source",
-    "our:verify:prettier": "prettier --write ./source/**",
+    "our:verify:module": "valid-module",
+    "our:verify:prettier": "prettier --write .",
     "our:verify:typescript": "tsc --noEmit --project tsconfig.json",
     "test": "node ./edition-es5/test.js"
   },

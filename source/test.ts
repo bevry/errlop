@@ -4,8 +4,8 @@ import kava from 'kava'
 import Errlop from './index.js'
 import { equal } from 'assert-helpers'
 
-kava.suite('errlop', function(suite, test) {
-	test('stacks work as expected', function() {
+kava.suite('errlop', function (suite, test) {
+	test('stacks work as expected', function () {
 		const a = new Errlop('AError')
 		const b = new Errlop('BError', a)
 		const c = Errlop.create('CError', b)
@@ -30,7 +30,7 @@ kava.suite('errlop', function(suite, test) {
 			'AError does not exist in CError.orphanStack'
 		)
 	})
-	test('exitCode works as expected', function() {
+	test('exitCode works as expected', function () {
 		// manual set
 		const a = new Errlop('AError')
 		a.exitCode = 1
@@ -61,7 +61,7 @@ kava.suite('errlop', function(suite, test) {
 		equal(b.exitCode, 1, 'b.exitCode remained the initial inherited value')
 		equal(c.exitCode, 1, 'c.exitCode remained the initial inherited value')
 	})
-	test('exitCode can inherit from errno', function() {
+	test('exitCode can inherit from errno', function () {
 		// manual set
 		const a = new Error('AError')
 		// @ts-ignore
@@ -71,7 +71,7 @@ kava.suite('errlop', function(suite, test) {
 		const b = new Errlop('BError', a)
 		equal(b.exitCode, 1, 'b.exitCode inherited a.exitCode correctly')
 	})
-	test('exitCode can inherit from code', function() {
+	test('exitCode can inherit from code', function () {
 		// manual set
 		const a = new Error('AError')
 		// @ts-ignore
@@ -81,7 +81,7 @@ kava.suite('errlop', function(suite, test) {
 		const b = new Errlop('BError', a)
 		equal(b.exitCode, 1, 'b.exitCode inherited a.exitCode correctly')
 	})
-	test('exitCode correctly dismisses non numeric values', function() {
+	test('exitCode correctly dismisses non numeric values', function () {
 		// manual set
 		const a = new Error('AError')
 		// @ts-ignore

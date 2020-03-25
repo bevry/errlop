@@ -109,9 +109,9 @@ export default class Errlop extends Error {
 		this.orphanStack = ((input as any).stack || (this as any).stack).toString()
 		this.stack = this.ancestors.reduce<string>(
 			(accumulator, error) =>
-				`${accumulator}\n↳ ${(error as Errlop).orphanStack ||
-					(error as Error).stack ||
-					error}`,
+				`${accumulator}\n↳ ${
+					(error as Errlop).orphanStack || (error as Error).stack || error
+				}`,
 			this.orphanStack
 		)
 	}
