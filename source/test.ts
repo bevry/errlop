@@ -1,8 +1,6 @@
-'use strict'
-
 import kava from 'kava'
 import Errlop from './index.js'
-import { equal } from 'assert-helpers'
+import { equal, nullish } from 'assert-helpers'
 
 kava.suite('errlop', function (suite, test) {
 	test('stacks work as expected', function () {
@@ -89,6 +87,6 @@ kava.suite('errlop', function (suite, test) {
 
 		// inherit
 		const b = new Errlop('BError', a)
-		equal(b.exitCode, null, 'b.exitCode dimissed non numeric parent exit code')
+		nullish(b.exitCode, 'b.exitCode dimissed non numeric parent exit code')
 	})
 })

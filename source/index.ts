@@ -1,5 +1,3 @@
-'use strict'
-
 type PotentialError = Errlop | Error | ErrorCodeHolder | string
 interface ErrorCodeHolder {
 	exitCode?: string | number
