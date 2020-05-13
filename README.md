@@ -107,7 +107,7 @@ Error: CError
 
 ``` html
 <script type="module">
-    import pkg from '//cdn.pika.dev/errlop/^2.2.0'
+    import pkg from '//cdn.pika.dev/errlop/^3.0.0'
 </script>
 ```
 
@@ -115,7 +115,7 @@ Error: CError
 
 ``` html
 <script type="module">
-    import pkg from '//unpkg.com/errlop@^2.2.0'
+    import pkg from '//unpkg.com/errlop@^3.0.0'
 </script>
 ```
 
@@ -123,7 +123,7 @@ Error: CError
 
 ``` html
 <script type="module">
-    import pkg from '//dev.jspm.io/errlop@2.2.0'
+    import pkg from '//dev.jspm.io/errlop@3.0.0'
 </script>
 ```
 
