@@ -4,7 +4,7 @@
 
 Unless stated otherwise all works are:
 
-<ul><li>Copyright &copy; 2018+ Benjamin Lupton</li></ul>
+<ul><li>Copyright &copy; 2018+ <a href="https://balupton.com">Benjamin Lupton</a></li></ul>
 
 and licensed under:
 
