@@ -36,7 +36,7 @@ export default class Errlop extends Error {
 	 * The parent error if it was provided.
 	 * If a parent was provided, then use that, otherwise use the input's parent, if it exists.
 	 */
-	public parent?: Errlop | Error
+	public parent?: Errlop | Error | null
 
 	/** An array of all the ancestors. From parent, to grand parent, and so on. */
 	public ancestors: Array<Errlop | Error>
@@ -63,7 +63,10 @@ export default class Errlop extends Error {
 	 * Syntatic sugar for Errlop class creation.
 	 * Enables `Errlop.create(...args)` to achieve `new Errlop(...args)`
 	 */
-	static create(input: PotentialError, parent?: Errlop | Error): Errlop {
+	static create(
+		input: PotentialError,
+		parent: Errlop | Error | null = null
+	): Errlop {
 		return new this(input, parent)
 	}
 
@@ -71,7 +74,7 @@ export default class Errlop extends Error {
 	 * Create an instance of an error, using a message, as well as an optional parent.
 	 * If the parent is provided, then the `fullStack` property will include its stack too
 	 */
-	constructor(input: PotentialError, parent?: Errlop | Error) {
+	constructor(input: PotentialError, parent: Errlop | Error | null = null) {
 		if (!input) throw new Error('Attempted to create an Errlop without a input')
 
 		// Instantiate with the above
