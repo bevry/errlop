@@ -221,7 +221,6 @@
     "minimumTestNodeVersion": "10",
     "compiler": "typescript",
     "targets": [
-      "browser",
       "ES5"
     ]
   }
