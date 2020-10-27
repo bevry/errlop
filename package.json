@@ -1,6 +1,6 @@
 {
   "name": "errlop",
-  "version": "3.17.0",
+  "version": "4.0.0",
   "description": "An extended Error class that envelops a parent error, such that the stack trace contains the causation",
   "homepage": "https://github.com/bevry/errlop",
   "license": "MIT",
@@ -76,7 +76,7 @@
     "url": "https://github.com/bevry/errlop.git"
   },
   "engines": {
-    "node": ">=0.8"
+    "node": ">=4"
   },
   "editions": [
     {
@@ -115,7 +115,7 @@
         "require"
       ],
       "engines": {
-        "node": "10 || 12 || 13 || 14",
+        "node": "4 || 6 || 8 || 10 || 12 || 14 || 15",
         "browsers": false
       }
     },
@@ -130,7 +130,7 @@
         "import"
       ],
       "engines": {
-        "node": "12 || 13 || 14",
+        "node": "12 || 14 || 15",
         "browsers": false
       }
     },
@@ -165,23 +165,23 @@
   "browser": "edition-browsers/index.js",
   "module": "edition-browsers/index.js",
   "devDependencies": {
-    "@bevry/update-contributors": "^1.16.0",
-    "@typescript-eslint/eslint-plugin": "^4.0.1",
-    "@typescript-eslint/parser": "^4.0.1",
-    "assert-helpers": "^7.2.0",
-    "eslint": "^7.8.1",
-    "eslint-config-bevry": "^3.19.0",
-    "eslint-config-prettier": "^6.11.0",
+    "@bevry/update-contributors": "^1.17.0",
+    "@typescript-eslint/eslint-plugin": "^4.6.0",
+    "@typescript-eslint/parser": "^4.6.0",
+    "assert-helpers": "^8.0.1",
+    "eslint": "^7.12.0",
+    "eslint-config-bevry": "^3.22.0",
+    "eslint-config-prettier": "^6.14.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "kava": "^5.11.0",
+    "kava": "3.2.0",
     "make-deno-edition": "^1.1.1",
-    "prettier": "^2.1.1",
-    "projectz": "^2.15.0",
+    "prettier": "^2.1.2",
+    "projectz": "^2.16.0",
     "surge": "^0.21.6",
-    "typedoc": "^0.19.0",
-    "typescript": "^4.0.2",
-    "valid-directory": "^3.3.0",
-    "valid-module": "^1.13.0"
+    "typedoc": "^0.19.2",
+    "typescript": "^4.0.5",
+    "valid-directory": "^3.4.0",
+    "valid-module": "^1.14.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
@@ -223,8 +223,6 @@
     "singleQuote": true
   },
   "boundation": {
-    "minimumSupportNodeVersion": "0.8",
-    "minimumTestNodeVersion": "10",
     "compiler": "typescript",
     "targets": [
       "ES5"
