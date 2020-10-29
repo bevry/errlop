@@ -1,5 +1,9 @@
 # History
 
+## v4.1.0 2020 October 29
+
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v4.0.0 2020 October 27
 
 -   Changed engines from Node.js `>=0.8` to `>=4`, as supporting versions that we cannot test against is too fragile
