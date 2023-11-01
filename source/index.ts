@@ -65,7 +65,7 @@ export default class Errlop extends Error {
 	 */
 	static create(
 		input: PotentialError,
-		parent: Errlop | Error | null = null
+		parent: Errlop | Error | null = null,
 	): Errlop {
 		return new this(input, parent)
 	}
@@ -113,7 +113,7 @@ export default class Errlop extends Error {
 				`${accumulator}\n↳ ${
 					(error as Errlop).orphanStack || (error as Error).stack || error
 				}`,
-			this.orphanStack
+			this.orphanStack,
 		)
 	}
 
