@@ -1,6 +1,6 @@
 {
   "name": "errlop",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "description": "An extended Error class that envelops a parent error, such that the stack trace contains the causation",
   "homepage": "https://github.com/bevry/errlop",
   "license": "Artistic-2.0",
@@ -76,7 +76,7 @@
     "url": "https://github.com/bevry/errlop.git"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=4"
   },
   "editions": [
     {
@@ -115,7 +115,7 @@
         "require"
       ],
       "engines": {
-        "node": "6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21",
+        "node": "4 || 6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21",
         "browsers": false
       }
     },
@@ -169,7 +169,7 @@
     "@types/node": "^20.9.0",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
-    "assert-helpers": "^10.1.0",
+    "assert-helpers": "^11.0.0",
     "eslint": "^8.53.0",
     "eslint-config-bevry": "^3.29.0",
     "eslint-config-prettier": "^9.0.0",
