@@ -1,6 +1,6 @@
 {
   "name": "errlop",
-  "version": "4.6.0",
+  "version": "5.0.0",
   "description": "An extended Error class that envelops a parent error, such that the stack trace contains the causation",
   "homepage": "https://github.com/bevry/errlop",
   "license": "Artistic-2.0",
@@ -76,7 +76,7 @@
     "url": "https://github.com/bevry/errlop.git"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=8"
   },
   "editions": [
     {
@@ -115,7 +115,7 @@
         "require"
       ],
       "engines": {
-        "node": "4 || 6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21",
+        "node": "8 || 10 || 12 || 14 || 16 || 18 || 20 || 21",
         "browsers": false
       }
     },
@@ -165,13 +165,13 @@
   "browser": "edition-browsers/index.js",
   "module": "edition-browsers/index.js",
   "devDependencies": {
-    "@bevry/update-contributors": "^1.22.0",
-    "@types/node": "^20.8.10",
-    "@typescript-eslint/eslint-plugin": "^6.9.1",
-    "@typescript-eslint/parser": "^6.9.1",
-    "assert-helpers": "^8.4.0",
-    "eslint": "^8.52.0",
-    "eslint-config-bevry": "^3.27.0",
+    "@bevry/update-contributors": "^1.23.0",
+    "@types/node": "^20.9.0",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "assert-helpers": "^10.0.0",
+    "eslint": "^8.53.0",
+    "eslint-config-bevry": "^3.29.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
     "kava": "3.2.0",
@@ -181,8 +181,8 @@
     "surge": "^0.23.1",
     "typedoc": "^0.25.3",
     "typescript": "5.2.2",
-    "valid-directory": "^4.0.0",
-    "valid-module": "^1.17.0"
+    "valid-directory": "^4.1.0",
+    "valid-module": "^2.1.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
