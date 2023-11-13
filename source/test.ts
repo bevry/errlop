@@ -15,17 +15,17 @@ kava.suite('errlop', function (suite, test) {
 		equal(
 			orphanStack.indexOf('CError') !== -1,
 			true,
-			'CError exists in CError.orphanStack',
+			'CError exists in CError.orphanStack'
 		)
 		equal(
 			orphanStack.indexOf('BError') !== -1,
 			false,
-			'BError does not exist in CError.orphanStack',
+			'BError does not exist in CError.orphanStack'
 		)
 		equal(
 			orphanStack.indexOf('AError') !== -1,
 			false,
-			'AError does not exist in CError.orphanStack',
+			'AError does not exist in CError.orphanStack'
 		)
 	})
 	test('exitCode works as expected', function () {
@@ -47,7 +47,7 @@ kava.suite('errlop', function (suite, test) {
 		equal(
 			c.exitCode,
 			1,
-			'c.exitCode inherited from b.exitCode which inherited from a.exitCode correctly',
+			'c.exitCode inherited from b.exitCode which inherited from a.exitCode correctly'
 		)
 
 		// inherit yet again, but this time override
