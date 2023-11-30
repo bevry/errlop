@@ -1,5 +1,11 @@
 # History
 
+## v8.0.0 2023 November 30
+
+-   Errlop now supports any input for itself and its parent, including objects with `message`, `exitCode`, `code`, `level`, etc properties. Parents that are not an `Errlop` or `Error` instance will become an `Errlop` instance.
+-   `isErrlop` and the new `isError` static methods now conform to type predicates, this enables typed conditional filtering.
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v7.5.0 2023 November 29
 
 -   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
@@ -195,17 +201,17 @@
 
 ## v1.0.3 2018 August 19
 
--   Add duck typing for node version 4 and under
--   Prevent additional crashes on node version 4
+-   Add duck typing for Node.js v4 and under
+-   Prevent additional crashes on Node.js v4
 
 ## v1.0.2 2018 July 27
 
--   More effecient node version 4 crash prevention
+-   More efficient Node.js v4 crash prevention
 
 ## v1.0.1 2018 July 27
 
--   Support node version 0.8
--   Prevent a peculiar crash on node version 4
+-   Support Node.js v0.8
+-   Prevent a peculiar crash on Node.js v4
 
 ## v1.0.0 2018 July 21
 

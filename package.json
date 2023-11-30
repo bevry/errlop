@@ -1,6 +1,6 @@
 {
   "name": "errlop",
-  "version": "7.5.0",
+  "version": "8.0.0",
   "description": "An extended Error class that envelops a parent error, such that the stack trace contains the causation",
   "homepage": "https://github.com/bevry/errlop",
   "license": "Artistic-2.0",
@@ -11,7 +11,8 @@
     "deno-entry",
     "denoland",
     "error",
-    "es2021",
+    "es2017",
+    "es2022",
     "es5",
     "export-default",
     "module",
@@ -110,13 +111,28 @@
       }
     },
     {
-      "description": "TypeScript compiled against ES2021 for Node.js 18 with Require for modules",
-      "directory": "edition-es2021",
+      "description": "TypeScript compiled against ES2022 for Node.js 21 with Require for modules",
+      "directory": "edition-es2022",
       "entry": "index.js",
       "tags": [
         "compiled",
         "javascript",
-        "es2021",
+        "es2022",
+        "require"
+      ],
+      "engines": {
+        "node": "14 || 16 || 18 || 20 || 21",
+        "browsers": false
+      }
+    },
+    {
+      "description": "TypeScript compiled against ES2017 for Node.js 12 with Require for modules",
+      "directory": "edition-es2017",
+      "entry": "index.js",
+      "tags": [
+        "compiled",
+        "javascript",
+        "es2017",
         "require"
       ],
       "engines": {
@@ -140,13 +156,13 @@
       }
     },
     {
-      "description": "TypeScript compiled against ES2021 for Node.js 18 with Import for modules",
-      "directory": "edition-es2021-esm",
+      "description": "TypeScript compiled against ES2017 for Node.js 12 with Import for modules",
+      "directory": "edition-es2017-esm",
       "entry": "index.js",
       "tags": [
         "compiled",
         "javascript",
-        "es2021",
+        "es2017",
         "import"
       ],
       "engines": {
@@ -186,9 +202,9 @@
   "exports": {
     "node": {
       "types": "./edition-types/index.d.ts",
-      "import": "./edition-es2021-esm/index.js",
+      "import": "./edition-es2017-esm/index.js",
       "default": "./index.cjs",
-      "require": "./edition-es2021/index.js"
+      "require": "./edition-es2022/index.js"
     },
     "browser": {
       "types": "./edition-types/index.d.ts",
@@ -203,10 +219,10 @@
   },
   "devDependencies": {
     "@bevry/update-contributors": "^1.23.0",
-    "@types/node": "^20.10.0",
+    "@types/node": "^20.10.1",
     "@typescript-eslint/eslint-plugin": "^6.13.1",
     "@typescript-eslint/parser": "^6.13.1",
-    "assert-helpers": "^11.6.0",
+    "assert-helpers": "^11.7.0",
     "eslint": "^8.54.0",
     "eslint-config-bevry": "^5.2.0",
     "eslint-config-prettier": "^9.0.0",
@@ -222,11 +238,12 @@
   },
   "scripts": {
     "our:clean": "rm -rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
-    "our:compile": "npm run our:compile:deno && npm run our:compile:edition-browsers && npm run our:compile:edition-es2021 && npm run our:compile:edition-es2021-esm && npm run our:compile:edition-es5 && npm run our:compile:edition-types",
+    "our:compile": "npm run our:compile:deno && npm run our:compile:edition-browsers && npm run our:compile:edition-es2017 && npm run our:compile:edition-es2017-esm && npm run our:compile:edition-es2022 && npm run our:compile:edition-es5 && npm run our:compile:edition-types",
     "our:compile:deno": "make-deno-edition --attempt",
     "our:compile:edition-browsers": "tsc --module ESNext --target ES2022 --outDir ./edition-browsers --project tsconfig.json && ( test ! -d edition-browsers/source || ( mv edition-browsers/source edition-temp && rm -rf edition-browsers && mv edition-temp edition-browsers ) )",
-    "our:compile:edition-es2021": "tsc --module commonjs --target ES2021 --outDir ./edition-es2021 --project tsconfig.json && ( test ! -d edition-es2021/source || ( mv edition-es2021/source edition-temp && rm -rf edition-es2021 && mv edition-temp edition-es2021 ) ) && printf '%s' '{\"type\": \"commonjs\"}' > edition-es2021/package.json",
-    "our:compile:edition-es2021-esm": "tsc --module ESNext --target ES2021 --outDir ./edition-es2021-esm --project tsconfig.json && ( test ! -d edition-es2021-esm/source || ( mv edition-es2021-esm/source edition-temp && rm -rf edition-es2021-esm && mv edition-temp edition-es2021-esm ) ) && printf '%s' '{\"type\": \"module\"}' > edition-es2021-esm/package.json",
+    "our:compile:edition-es2017": "tsc --module commonjs --target ES2017 --outDir ./edition-es2017 --project tsconfig.json && ( test ! -d edition-es2017/source || ( mv edition-es2017/source edition-temp && rm -rf edition-es2017 && mv edition-temp edition-es2017 ) ) && printf '%s' '{\"type\": \"commonjs\"}' > edition-es2017/package.json",
+    "our:compile:edition-es2017-esm": "tsc --module ESNext --target ES2017 --outDir ./edition-es2017-esm --project tsconfig.json && ( test ! -d edition-es2017-esm/source || ( mv edition-es2017-esm/source edition-temp && rm -rf edition-es2017-esm && mv edition-temp edition-es2017-esm ) ) && printf '%s' '{\"type\": \"module\"}' > edition-es2017-esm/package.json",
+    "our:compile:edition-es2022": "tsc --module commonjs --target ES2022 --outDir ./edition-es2022 --project tsconfig.json && ( test ! -d edition-es2022/source || ( mv edition-es2022/source edition-temp && rm -rf edition-es2022 && mv edition-temp edition-es2022 ) ) && printf '%s' '{\"type\": \"commonjs\"}' > edition-es2022/package.json",
     "our:compile:edition-es5": "tsc --module commonjs --target ES5 --outDir ./edition-es5 --project tsconfig.json && ( test ! -d edition-es5/source || ( mv edition-es5/source edition-temp && rm -rf edition-es5 && mv edition-temp edition-es5 ) ) && printf '%s' '{\"type\": \"commonjs\"}' > edition-es5/package.json",
     "our:compile:edition-types": "tsc --emitDeclarationOnly --declaration --declarationMap --declarationDir ./edition-types --project tsconfig.json && ( test ! -d edition-types/source || ( mv edition-types/source edition-temp && rm -rf edition-types && mv edition-temp edition-types ) )",
     "our:deploy": "printf '%s\n' 'no need for this project'",
