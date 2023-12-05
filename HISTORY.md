@@ -1,5 +1,9 @@
 # History
 
+## v8.1.0 2023 December 5
+
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v8.0.0 2023 November 30
 
 -   Errlop now supports any input for itself and its parent, including objects with `message`, `exitCode`, `code`, `level`, etc properties. Parents that are not an `Errlop` or `Error` instance will become an `Errlop` instance.
