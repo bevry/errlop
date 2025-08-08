@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import kava from 'kava'
 import Errlop from './index.js'
 import { equal, nullish, contains, notContains } from 'assert-helpers'
@@ -109,7 +110,7 @@ kava.suite('errlop', function (suite, test) {
 		test('exitCode can inherit from errno', function () {
 			// manual set
 			const a = new Error('AError')
-			// @ts-ignore
+			// @ts-expect-error we are testing type-unsafe inputs
 			a.errno = 1
 
 			// inherit
@@ -119,7 +120,7 @@ kava.suite('errlop', function (suite, test) {
 		test('exitCode can inherit from code', function () {
 			// manual set
 			const a = new Error('AError')
-			// @ts-ignore
+			// @ts-expect-error we are testing type-unsafe inputs
 			a.code = 1
 
 			// inherit
@@ -129,7 +130,7 @@ kava.suite('errlop', function (suite, test) {
 		test('exitCode correctly dismisses non numeric values', function () {
 			// manual set
 			const a = new Error('AError')
-			// @ts-ignore
+			// @ts-expect-error we are testing type-unsafe inputs
 			a.code = new Error('annoying thing that sometimes happens')
 
 			// inherit

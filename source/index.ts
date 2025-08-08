@@ -1,4 +1,4 @@
-/* eslint no-dupe-class-members:0 */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 /** A valid Errlop or Error instance. */
 export type ErrorValid = Errlop | Error
@@ -38,7 +38,10 @@ export type ErrorInput =
 	| string
 	| any
 
-/** Convert to a valid number or null. */
+/**
+ * Convert to a valid number or null.
+ * @param input
+ */
 function getNumber(input: any): number | null {
 	if (input == null || input === '') return null
 	const number = Number(input)
@@ -46,7 +49,10 @@ function getNumber(input: any): number | null {
 	return number
 }
 
-/** Fetch the exit code from the value */
+/**
+ * Fetch the exit code from the value
+ * @param value
+ */
 function getExitCode(value: any): number | null {
 	if (value != null) {
 		if (typeof value.exitCode !== 'undefined') return getNumber(value.exitCode)
@@ -56,7 +62,11 @@ function getExitCode(value: any): number | null {
 	return null
 }
 
-/** Prepend a code to the stack if applicable. */
+/**
+ * Prepend a code to the stack if applicable.
+ * @param code
+ * @param stack
+ */
 function prependCode(code: any, stack: string): string {
 	if (code && typeof code === 'string' && stack.includes(code) === false)
 		return `[${code}]: ${stack}`
@@ -78,7 +88,11 @@ export default class Errlop extends Error implements ErrorProperties {
 	/** Duck typing so native classes can work with transpiled classes, as otherwise they would fail instanceof checks. */
 	klass: typeof Errlop = Errlop
 
-	/** Turn the input and parent into an Errlop instance. */
+	/**
+	 * Turn the input and parent into an Errlop instance.
+	 * @param input
+	 * @param parent
+	 */
 	constructor(input: ErrorInput, parent: ErrorInput = null) {
 		if (!input)
 			throw new Error('Attempted to create an Errlop without an input')
@@ -172,7 +186,10 @@ export default class Errlop extends Error implements ErrorProperties {
 		return value instanceof Error || Errlop.isErrlop(value)
 	}
 
-	/** Ensure that the value is an Errlop instance */
+	/**
+	 * Ensure that the value is an Errlop instance
+	 * @param value
+	 */
 	static ensure(value: ErrorInput): Errlop {
 		return this.isErrlop(value) ? value : this.create(value, null)
 	}
@@ -180,6 +197,8 @@ export default class Errlop extends Error implements ErrorProperties {
 	/**
 	 * Syntactic sugar for Errlop class creation.
 	 * Enables `Errlop.create(...)` to achieve `new Errlop(...)`
+	 * @param input
+	 * @param parent
 	 */
 	static create(input: ErrorInput, parent: ErrorInput = null): Errlop {
 		return new this(input, parent)

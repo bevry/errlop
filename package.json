@@ -1,6 +1,6 @@
 {
   "name": "errlop",
-  "version": "8.4.0",
+  "version": "8.5.0",
   "license": "Artistic-2.0",
   "description": "An extended Error class that envelops a parent error, such that the stack trace contains the causation",
   "homepage": "https://github.com/bevry/errlop",
@@ -20,7 +20,7 @@
     "denoland",
     "error",
     "es2017",
-    "es2022",
+    "es2024",
     "es5",
     "export-default",
     "module",
@@ -43,7 +43,6 @@
       "---",
       "githubsponsors",
       "thanksdev",
-      "patreon",
       "liberapay",
       "buymeacoffee",
       "opencollective",
@@ -57,14 +56,11 @@
       "githubWorkflow": "bevry",
       "githubSponsorsUsername": "balupton",
       "thanksdevGithubUsername": "bevry",
-      "buymeacoffeeUsername": "balupton",
-      "cryptoURL": "https://bevry.me/crypto",
-      "flattrUsername": "balupton",
       "liberapayUsername": "bevry",
+      "buymeacoffeeUsername": "balupton",
       "opencollectiveUsername": "bevry",
-      "patreonUsername": "bevry",
+      "cryptoURL": "https://bevry.me/crypto",
       "paypalURL": "https://bevry.me/paypal",
-      "wishlistURL": "https://bevry.me/wishlist",
       "discordServerID": "1147436445783560193",
       "discordServerInvite": "nQuXddV7VP",
       "twitchUsername": "balupton",
@@ -85,38 +81,45 @@
     "Benjamin Lupton <b@lupton.cc> (https://balupton.com) (https://github.com/balupton)"
   ],
   "sponsors": [
-    "Andrew Nesbitt (https://nesbitt.io) (https://github.com/andrew): Software engineer and researcher",
-    "Balsa <hello@balsa.com> (https://balsa.com) (https://github.com/balsa): We're Balsa, and we're building tools for builders.",
-    "Codecov <hello-codecov@sentry.io> (https://codecov.io) (https://github.com/codecov): Empower developers with tools to improve code quality and testing.",
+    "Andrew Nesbitt <andrewnez@gmail.com> (https://nesbitt.io) (https://github.com/andrew): Working on mapping the world of open source software @ecosyste-ms  and empowering developers with @octobox",
+    "Divinci ™ <hi@divinci.ai> (https://divinci.ai) (https://github.com/Divinci-AI): A more comfortable AI conversation experience, with friends! 🤖🖤",
+    "Mr. Henry <hello@mrhenry.be> (https://mrhenry.be) (https://github.com/mrhenry)",
     "Poonacha Medappa (https://poonachamedappa.com) (https://github.com/km-Poonacha)",
-    "Rob Morris <rob@prismatik.com.au> (https://github.com/Rob-Morris)",
-    "Sentry (https://sentry.io) (https://github.com/getsentry): Real-time crash reporting for your web apps, mobile apps, and games.",
-    "Syntax <scott@syntax.fm> (https://syntax.fm) (https://github.com/syntaxfm): Syntax Podcast"
+    "Roboflow <hello@roboflow.com> (https://roboflow.com) (https://github.com/roboflow)",
+    "Square (https://github.com/square) (https://thanks.dev/d/gh/square)"
   ],
   "donors": [
-    "Andrew Nesbitt (https://nesbitt.io) (https://github.com/andrew)",
-    "Armen Mkrtchian (https://mogoni.dev) (https://github.com/Armenm)",
+    "Andrew Nesbitt <andrewnez@gmail.com> (https://nesbitt.io) (https://github.com/andrew)",
+    "Ángel González <aglezabad@gmail.com> (https://univunix.com) (https://github.com/Aglezabad) (https://twitter.com/Aglezabad)",
+    "Arjun Aditya <nermalcat69@skiff.com> (https://arjunaditya.xyz) (https://github.com/nermalcat69)",
+    "Armen Mkrtchian <armen.mkrtchian@gmail.com> (https://mogoni.dev) (https://github.com/Armenm) (https://twitter.com/armen_mkrtchian)",
     "Balsa <hello@balsa.com> (https://balsa.com) (https://github.com/balsa)",
+    "Canonical (https://canonical.com) (https://github.com/canonical) (https://thanks.dev/d/gh/canonical)",
     "Chad (https://opencollective.com/chad8)",
     "Codecov <hello-codecov@sentry.io> (https://codecov.io) (https://github.com/codecov)",
+    "Divinci ™ <hi@divinci.ai> (https://divinci.ai) (https://github.com/Divinci-AI)",
     "dr.dimitru (https://veliovgroup.com) (https://github.com/dr-dimitru)",
-    "Elliott Ditman (https://elliottditman.com) (https://github.com/elliottditman)",
+    "Elliott Ditman <elliottditman@gmail.com> (https://elliottditman.com) (https://github.com/elliottditman) (https://patreon.com/user?u=15026448)",
     "entroniq (https://gitlab.com/entroniq) (https://thanks.dev/d/gl/entroniq)",
+    "Frontend Masters <support@frontendmasters.com> (https://FrontendMasters.com) (https://github.com/FrontendMasters) (https://thanks.dev/d/gh/FrontendMasters)",
     "GitHub (https://github.com/about) (https://github.com/github)",
     "Hunter Beast (https://cryptoquick.com) (https://github.com/cryptoquick)",
     "Jean-Luc Geering (https://github.com/jlgeering) (https://opencollective.com/jlgeering) (https://twitter.com/jlgeering)",
-    "Michael Duane Mooring (https://mdm.cc) (https://github.com/mikeumus) (https://opencollective.com/mikeumus) (https://twitter.com/mikeumus)",
+    "Lee Driscoll <lsdriscoll@icloud.com> (https://leedriscoll.me) (https://github.com/leedriscoll) (https://patreon.com/user?u=5292556)",
+    "Michael Duane Mooring (https://divinci.app) (https://github.com/mikeumus) (https://opencollective.com/mikeumus) (https://twitter.com/mikeumus)",
     "Michael Harry Scepaniak <mhs1.sys@gmail.com> (https://michaelscepaniak.com) (https://github.com/hispanic)",
     "Mohammed Shah <shah@idk.uno> (https://github.com/smashah) (https://thanks.dev/d/gh/smashah) (https://twitter.com/smashah)",
     "Mr. Henry <hello@mrhenry.be> (https://mrhenry.be) (https://github.com/mrhenry)",
-    "Nermal <nermalcat69@skiff.com> (https://arjunaditya.vercel.app) (https://github.com/nermalcat69)",
-    "Pleo (https://www.pleo.io) (https://github.com/pleo-io)",
+    "Pleo (https://pleo.io) (https://github.com/pleo-io)",
     "Poonacha Medappa (https://poonachamedappa.com) (https://github.com/km-Poonacha)",
-    "Rob Morris <rob@prismatik.com.au> (https://github.com/Rob-Morris)",
     "Robert de Forest <guitar.robot@gmail.com> (https://github.com/rdeforest)",
-    "Sentry (https://sentry.io) (https://github.com/getsentry)",
+    "Rob Morris <rob@prismatik.com.au> (https://linktr.ee/recipromancer) (https://github.com/Rob-Morris)",
+    "Roboflow <hello@roboflow.com> (https://roboflow.com) (https://github.com/roboflow)",
+    "Scott Kempson <scottkempson@gmail.com> (https://github.com/scokem) (https://twitter.com/scokem)",
+    "Sentry <support@sentry.io> (https://sentry.io) (https://github.com/getsentry)",
     "ServieJS (https://github.com/serviejs) (https://thanks.dev/d/gh/serviejs)",
     "Skunk Team (https://skunk.team) (https://github.com/skunkteam)",
+    "Square (https://github.com/square) (https://thanks.dev/d/gh/square)",
     "Syntax <scott@syntax.fm> (https://syntax.fm) (https://github.com/syntaxfm)",
     "WriterJohnBuck (https://github.com/WriterJohnBuck)"
   ],
@@ -136,7 +139,7 @@
       "engines": false
     },
     {
-      "description": "TypeScript compiled against ES2022 for web browsers with Import for modules",
+      "description": "TypeScript compiled against ES2024 for web browsers with Import for modules",
       "directory": "edition-browsers",
       "entry": "index.js",
       "tags": [
@@ -150,22 +153,22 @@
       }
     },
     {
-      "description": "TypeScript compiled against ES2022 for Node.js 14 || 16 || 18 || 20 || 21 with Require for modules",
-      "directory": "edition-es2022",
+      "description": "TypeScript compiled against ES2024 for Node.js 14 || 16 || 18 || 20 || 22 || 24 with Require for modules",
+      "directory": "edition-es2024",
       "entry": "index.js",
       "tags": [
         "compiled",
         "javascript",
-        "es2022",
+        "es2024",
         "require"
       ],
       "engines": {
-        "node": "14 || 16 || 18 || 20 || 21",
+        "node": "14 || 16 || 18 || 20 || 22 || 24",
         "browsers": false
       }
     },
     {
-      "description": "TypeScript compiled against ES2017 for Node.js 6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21 with Require for modules",
+      "description": "TypeScript compiled against ES2017 for Node.js 6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 22 || 24 with Require for modules",
       "directory": "edition-es2017",
       "entry": "index.js",
       "tags": [
@@ -175,12 +178,12 @@
         "require"
       ],
       "engines": {
-        "node": "6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21",
+        "node": "6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 22 || 24",
         "browsers": false
       }
     },
     {
-      "description": "TypeScript compiled against ES5 for Node.js 4 || 6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21 with Require for modules",
+      "description": "TypeScript compiled against ES5 for Node.js 4 || 6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 22 || 24 with Require for modules",
       "directory": "edition-es5",
       "entry": "index.js",
       "tags": [
@@ -190,12 +193,12 @@
         "require"
       ],
       "engines": {
-        "node": "4 || 6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21",
+        "node": "4 || 6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 22 || 24",
         "browsers": false
       }
     },
     {
-      "description": "TypeScript compiled against ES2017 for Node.js 12 || 14 || 16 || 18 || 20 || 21 with Import for modules",
+      "description": "TypeScript compiled against ES2017 for Node.js 12 || 14 || 16 || 18 || 20 || 22 || 24 with Import for modules",
       "directory": "edition-es2017-esm",
       "entry": "index.js",
       "tags": [
@@ -205,7 +208,7 @@
         "import"
       ],
       "engines": {
-        "node": "12 || 14 || 16 || 18 || 20 || 21",
+        "node": "12 || 14 || 16 || 18 || 20 || 22 || 24",
         "browsers": false
       }
     },
@@ -243,7 +246,7 @@
       "types": "./edition-types/index.d.ts",
       "import": "./edition-es2017-esm/index.js",
       "default": "./index.cjs",
-      "require": "./edition-es2022/index.js"
+      "require": "./edition-es2024/index.js"
     },
     "browser": {
       "types": "./edition-types/index.d.ts",
@@ -254,35 +257,31 @@
   "browser": "edition-browsers/index.js",
   "module": "edition-browsers/index.js",
   "dependencies": {
-    "editions": "^6.20.0"
+    "editions": "^6.21.0"
   },
   "devDependencies": {
-    "@types/node": "^20.10.5",
-    "@typescript-eslint/eslint-plugin": "^6.16.0",
-    "@typescript-eslint/parser": "^6.16.0",
-    "assert-helpers": "^11.11.0",
-    "eslint": "^8.56.0",
-    "eslint-config-bevry": "^5.3.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.2",
-    "kava": "^7.6.0",
-    "make-deno-edition": "^2.2.0",
-    "prettier": "^3.1.1",
-    "projectz": "^4.1.1",
-    "typedoc": "^0.25.4",
-    "typescript": "5.3.3",
-    "valid-directory": "^4.8.0",
+    "@types/node": "^24.2.0",
+    "assert-helpers": "^11.12.0",
+    "eslint": "^9.32.0",
+    "eslint-config-bevry": "^6.1.2",
+    "kava": "^7.9.0",
+    "make-deno-edition": "^2.3.0",
+    "prettier": "^3.6.2",
+    "projectz": "^4.2.0",
+    "typedoc": "^0.28.9",
+    "typescript": "5.9.2",
+    "valid-directory": "^4.9.0",
     "valid-module": "^2.6.0"
   },
   "scripts": {
     "our:clean": "rm -rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
-    "our:compile": "npm run our:compile:deno && npm run our:compile:edition-browsers && npm run our:compile:edition-es2017 && npm run our:compile:edition-es2017-esm && npm run our:compile:edition-es2022 && npm run our:compile:edition-es5 && npm run our:compile:edition-types",
+    "our:compile": "npm run our:compile:deno && npm run our:compile:edition-browsers && npm run our:compile:edition-es2017 && npm run our:compile:edition-es2017-esm && npm run our:compile:edition-es2024 && npm run our:compile:edition-es5 && npm run our:compile:edition-types",
     "our:compile:deno": "make-deno-edition --attempt",
-    "our:compile:edition-browsers": "tsc --module ESNext --target ES2022 --outDir ./edition-browsers --project tsconfig.json && ( test ! -d edition-browsers/source || ( mv edition-browsers/source edition-temp && rm -rf edition-browsers && mv edition-temp edition-browsers ) )",
-    "our:compile:edition-es2017": "tsc --module commonjs --target ES2017 --outDir ./edition-es2017 --project tsconfig.json && ( test ! -d edition-es2017/source || ( mv edition-es2017/source edition-temp && rm -rf edition-es2017 && mv edition-temp edition-es2017 ) ) && printf '%s' '{\"type\": \"commonjs\"}' > edition-es2017/package.json",
-    "our:compile:edition-es2017-esm": "tsc --module ESNext --target ES2017 --outDir ./edition-es2017-esm --project tsconfig.json && ( test ! -d edition-es2017-esm/source || ( mv edition-es2017-esm/source edition-temp && rm -rf edition-es2017-esm && mv edition-temp edition-es2017-esm ) ) && printf '%s' '{\"type\": \"module\"}' > edition-es2017-esm/package.json",
-    "our:compile:edition-es2022": "tsc --module commonjs --target ES2022 --outDir ./edition-es2022 --project tsconfig.json && ( test ! -d edition-es2022/source || ( mv edition-es2022/source edition-temp && rm -rf edition-es2022 && mv edition-temp edition-es2022 ) ) && printf '%s' '{\"type\": \"commonjs\"}' > edition-es2022/package.json",
-    "our:compile:edition-es5": "tsc --module commonjs --target ES5 --outDir ./edition-es5 --project tsconfig.json && ( test ! -d edition-es5/source || ( mv edition-es5/source edition-temp && rm -rf edition-es5 && mv edition-temp edition-es5 ) ) && printf '%s' '{\"type\": \"commonjs\"}' > edition-es5/package.json",
+    "our:compile:edition-browsers": "tsc --module esnext --target es2024 --outDir ./edition-browsers --project tsconfig.json && ( test ! -d edition-browsers/source || ( mv edition-browsers/source edition-temp && rm -rf edition-browsers && mv edition-temp edition-browsers ) )",
+    "our:compile:edition-es2017": "tsc --module commonjs --target es2017 --outDir ./edition-es2017 --project tsconfig.json && ( test ! -d edition-es2017/source || ( mv edition-es2017/source edition-temp && rm -rf edition-es2017 && mv edition-temp edition-es2017 ) ) && printf '%s' '{\"type\": \"commonjs\"}' > edition-es2017/package.json",
+    "our:compile:edition-es2017-esm": "tsc --module esnext --target es2017 --outDir ./edition-es2017-esm --project tsconfig.json && ( test ! -d edition-es2017-esm/source || ( mv edition-es2017-esm/source edition-temp && rm -rf edition-es2017-esm && mv edition-temp edition-es2017-esm ) ) && printf '%s' '{\"type\": \"module\"}' > edition-es2017-esm/package.json",
+    "our:compile:edition-es2024": "tsc --module commonjs --target es2024 --outDir ./edition-es2024 --project tsconfig.json && ( test ! -d edition-es2024/source || ( mv edition-es2024/source edition-temp && rm -rf edition-es2024 && mv edition-temp edition-es2024 ) ) && printf '%s' '{\"type\": \"commonjs\"}' > edition-es2024/package.json",
+    "our:compile:edition-es5": "tsc --module commonjs --target es5 --outDir ./edition-es5 --project tsconfig.json && ( test ! -d edition-es5/source || ( mv edition-es5/source edition-temp && rm -rf edition-es5 && mv edition-temp edition-es5 ) ) && printf '%s' '{\"type\": \"commonjs\"}' > edition-es5/package.json",
     "our:compile:edition-types": "tsc --emitDeclarationOnly --declaration --declarationMap --declarationDir ./edition-types --project tsconfig.json && ( test ! -d edition-types/source || ( mv edition-types/source edition-temp && rm -rf edition-types && mv edition-temp edition-types ) )",
     "our:deploy": "printf '%s\n' 'no need for this project'",
     "our:meta": "npm run our:meta:docs && npm run our:meta:projectz",
@@ -299,15 +298,10 @@
     "our:setup:install": "npm install",
     "our:test": "npm run our:verify && npm test",
     "our:verify": "npm run our:verify:eslint && npm run our:verify:module && npm run our:verify:prettier",
-    "our:verify:eslint": "eslint --fix --ignore-pattern '**/*.d.ts' --ignore-pattern '**/vendor/' --ignore-pattern '**/node_modules/' --ext .mjs,.js,.jsx,.ts,.tsx ./source",
+    "our:verify:eslint": "eslint --fix",
     "our:verify:module": "valid-module",
     "our:verify:prettier": "prettier --write .",
     "test": "node ./test.cjs"
-  },
-  "eslintConfig": {
-    "extends": [
-      "bevry"
-    ]
   },
   "prettier": {
     "semi": false,
